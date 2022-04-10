@@ -15,49 +15,52 @@ const PersonList = () => {
   }, []);
 
   return (
-      <div className="personList">
-        <Card
-          style={{
-            width: "350px",
-            height: "630px",
-            "border-bottom": "26px",
-            "border-radius": "22px",
-            overflow: "hidden",
-            "font-size": "18px",
-          }}
-        >
-          <Card.Content>
+    <div className="personList">
+      <Card
+        style={{
+          width: "350px",
+          height: "630px",
+          "border-bottom": "26px",
+          "border-radius": "22px",
+          overflow: "hidden",
+          "font-size": "18px",
+        }}
+      >
+        <Card.Content>
+          <Link to="add_person">
+            <span style={{ float: "right" }}>Add</span>
             <Icon
               name="plus"
               size="large"
               color="blue"
               style={{ float: "right" }}
             />
-            <Card.Header>Contacts</Card.Header>
-          </Card.Content>
-          <Input icon placeholder="Search..." iconPosition="left" size="mini">
-            <input style={{ "border-radius": "12px" }} />
-            <Icon name="search" />
-          </Input>
-          <List
-            divided
-            selection
-            verticalAlign="left"
-            style={{ overflow: "auto" }}
-          >
-            {personList.map((person) => {
-              return (
-                <List.Item style={{ overflow: "hidden" }}>
-                  <Image avatar src={imgPerson} />
-                  <List.Content>
-                    <List.Header>{person.name}</List.Header>
-                  </List.Content>
-                </List.Item>
-              );
-            })}
-          </List>
-        </Card>
-      </div>
+          </Link>
+          <Card.Header>Contacts</Card.Header>
+        </Card.Content>
+        <Input icon placeholder="Search..." iconPosition="left" size="mini">
+          <input style={{ "border-radius": "12px" }} />
+          <Icon name="search" />
+        </Input>
+        <List
+          divided
+          selection
+          verticalAlign="left"
+          style={{ overflow: "auto" }}
+        >
+          {personList.map((person) => {
+            return (
+              <List.Item style={{ overflow: "hidden" }}>
+                <Image avatar src={imgPerson} />
+                <List.Content>
+                  <List.Header>{person.name}</List.Header>
+                </List.Content>
+              </List.Item>
+            );
+          })}
+        </List>
+      </Card>
+    </div>
   );
 };
 export default PersonList;

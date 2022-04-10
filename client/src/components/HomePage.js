@@ -1,6 +1,6 @@
 import React from "react";
-
-const { default: PersonList } = require("./PersonList");
+import AddPerson from "./AddPerson";
+import PersonList from "./PersonList";
 
 const HomePage = () => {
   return (
