@@ -8,7 +8,6 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <p>Deneme Yazısıdır.</p>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="add_person" element={<AddPerson />} />
