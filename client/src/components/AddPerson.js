@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Card, Image, List, Icon, Input, Button } from "semantic-ui-react";
+import { Card, Label, List, Icon, Input, Button } from "semantic-ui-react";
 const AddPerson = () => {
   const style_card = {
     width: "355px",
@@ -37,50 +37,118 @@ const AddPerson = () => {
             </span>
           </Link>
           <Card.Header>New Contact</Card.Header>
-        </Card.Content>
-        <Card.Content>
-          <span
-            floated="left"
-            size="tiny"
-            circular
-            style={{
-              height: "80px",
-              width: "80px",
-              "background-color": "#bbb",
-              "border-radius": "50%",
-              display: "inline-block",
-              border: "1px solid #D4D4D4",
-              padding: "5px",
-              float: "left",
-              "padding-top":"14px"
-            }}
-          >
-            <a style={{ "font-weight": "bold" }}>
-              add
-              <br />
-              photo
-            </a>
-          </span>a
-          <div style={{ "margin-left": "95px" }}>
-            <Input
-              size="large"
-              transparent
-              placeholder="Search..."
-              style={style_input}
-            />
-            <Input
-              size="large"
-              transparent
-              placeholder="Search..."
-              style={style_input}
-            />
-            <Input
-              size="large"
-              transparent
-              placeholder="Search..."
-              style={style_input}
-            />
+
+          <div style={{ "margin-top": "40px" }}>
+            <span
+              floated="left"
+              size="tiny"
+              circular
+              style={{
+                height: "60px",
+                width: "60px",
+                "background-color": "#bbb",
+                "border-radius": "50%",
+                display: "inline-block",
+                border: "1px solid #D4D4D4",
+                padding: "5px",
+                float: "left",
+                "padding-top": "10px",
+              }}
+            >
+              <a>
+                <p
+                  style={{
+                    "font-size": "14px",
+                    "font-weight": "bold",
+                    "line-height": "1.1em",
+                  }}
+                >
+                  add photo
+                </p>
+              </a>
+            </span>
+            <div style={{ "margin-left": "85px" }}>
+              <Input
+                size="large"
+                transparent
+                placeholder="First name"
+                style={style_input}
+              />
+              <Input
+                size="large"
+                transparent
+                placeholder="Last name"
+                style={style_input}
+              />
+            </div>
           </div>
+
+          {/* <Label basic>
+            <Icon size="big" color="green" name="plus circle" />
+            <Input placeholder="phone..." size="big" transparent />
+          </Label> */}
+          <List
+            divided
+            floated="left"
+            selection
+            style={{ "margin-top": "20%" }}
+          >
+            <Icon size="large" color="green" name="plus circle" />
+            <Input
+              placeholder="mobile phone"
+              size="large"
+              transparent
+              icon="mobile alternate"
+              iconPosition="left"
+              style={style_input}
+            />
+          </List>
+          <List divided floated="left" selection>
+            <Icon size="large" color="green" name="plus circle" />
+            <Input
+              placeholder="home phone"
+              size="large"
+              transparent
+              icon="phone"
+              iconPosition="left"
+              style={style_input}
+            />
+          </List>
+          <List divided floated="left" selection>
+            <Icon size="large" color="green" name="plus circle" />
+            <Input
+              placeholder="email"
+              size="large"
+              transparent
+              icon="mail"
+              iconPosition="left"
+              style={style_input}
+            />
+          </List>
+          <List divided floated="left" selection>
+            <Icon size="large" color="green" name="plus circle" />
+            <Input
+              placeholder="address"
+              size="large"
+              transparent
+              icon="map"
+              iconPosition="left"
+              style={style_input}
+            />
+          </List>
+
+          <List divided selection >
+            <Input
+              size="large"
+              transparent
+              style={style_input}
+            >
+              <p>
+                Ringtone <a>Default</a>
+                <Icon name="angle right" />
+              </p>
+            </Input>
+          </List>
         </Card.Content>
       </Card>
     </div>
