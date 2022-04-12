@@ -11,7 +11,7 @@ import {
   Transition,
 } from "semantic-ui-react";
 import imgPerson from "../images/avatar/small/person.png";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const PersonList = () => {
   const style_card = {
@@ -23,7 +23,6 @@ const PersonList = () => {
   };
   const personList = useSelector((state) => state.personList);
   const dispatch = useDispatch();
-  console.log({ personList });
 
   useEffect(() => {
     dispatch(getPersons());
@@ -69,7 +68,7 @@ const PersonList = () => {
               <List.Item style={{ overflow: "hidden" }}>
                 <Image avatar src={imgPerson} />
                 <List.Content>
-                  <Link to="update_person">
+                  <Link to={`/detail_person/${person.id}`}>
                     <List.Header style={{ "margin-top": "8px" }}>
                       {person.name}
                     </List.Header>
