@@ -12,7 +12,7 @@ export const getPersons = () => (dispatch) => {
 
 export const getDetailPerson = (id) => (dispatch) => {
   axios
-    .get(`/persons/${id}`)
+    .get(`/persons/:${id}`)
     .then((res) => {
       dispatch({ type: "GET_DETAIL_PERSON_SUCCESS", payload: res.data });
     })

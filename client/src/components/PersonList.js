@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPersons } from "../actions";
 import {
@@ -14,6 +14,7 @@ import imgPerson from "../images/avatar/small/person.png";
 import { Link, useParams } from "react-router-dom";
 
 const PersonList = () => {
+  const { id } = useParams();
   const style_card = {
     width: "355px",
     height: "635px",
@@ -68,7 +69,7 @@ const PersonList = () => {
               <List.Item style={{ overflow: "hidden" }}>
                 <Image avatar src={imgPerson} />
                 <List.Content>
-                  <Link to={`/detail_person/${person.id}`}>
+                  <Link to={`/detail_person/:${id}`}>
                     <List.Header style={{ "margin-top": "8px" }}>
                       {person.name}
                     </List.Header>
