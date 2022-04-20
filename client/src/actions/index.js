@@ -1,6 +1,8 @@
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 export const getPersons = () => (dispatch) => {
+  
   //dispatch({ type: "GET_PERSONS_START" });
   axios
     .get("/persons")
@@ -11,10 +13,14 @@ export const getPersons = () => (dispatch) => {
 };
 
 export const getDetailPerson = (id) => (dispatch) => {
+  
   axios
-    .get(`/persons/:${id}`)
+    .get(`/persons/${id}`)
     .then((res) => {
-      dispatch({ type: "GET_DETAIL_PERSON_SUCCESS", payload: res.data });
+      const payload = {
+        ...res.data
+      };
+      dispatch({ type: "GET_DETAIL_PERSON_SUCCESS", payload});
     })
     .catch((err) => {
       dispatch({ type: "GET_DETAIL_PERSON_ERROR", payload: err });

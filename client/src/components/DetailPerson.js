@@ -10,12 +10,13 @@ import {
   Input,
   Button,
   Image,
+  Segment,
 } from "semantic-ui-react";
 import imgPerson from "../images/avatar/small/person.png";
 import { useEffect } from "react";
 
 const DetailPerson = () => {
-  const personList = useSelector((state) => state.personList);
+  const personDetail = useSelector((state) => state.personDetail);
   const dispatch = useDispatch();
   const { id } = useParams();
 
@@ -32,6 +33,7 @@ const DetailPerson = () => {
   };
   const style_input = { "border-bottom": "1px solid #D4D4D4", padding: "5px" };
   return (
+    <React.Fragment>
     <div className="personList">
       <Card style={style_card}>
         <Card.Content>
@@ -58,18 +60,17 @@ const DetailPerson = () => {
               Edit
             </span>
           </Link>
-        </Card.Content>
         <List>
-          <List.Item>
-            {personList.map((person) => {
-              return <span>{person.name} asd</span>;
-            })}
+            <div>
 
-            <Image src={imgPerson} size="small" circular />
-          </List.Item>
+            <Image src={imgPerson} size="small" circular centered style={{"margin-right":"27px"}}/>
+            </div>
+            <span>{personDetail.name}</span>
         </List>
+        </Card.Content>
       </Card>
     </div>
+    </React.Fragment>
   );
 };
 export default DetailPerson;
