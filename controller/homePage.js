@@ -2,7 +2,7 @@ const Person = require("../data/models/Person");
 
 const person_getList = (req, res) => {
   Person.find({})
-    .sort({ $natural: -1 })
+    .sort({ name: 1 })
     .then((data) => {
       res.send(200, data);
     })

@@ -1,17 +1,9 @@
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPersons } from "../actions";
-import {
-  Card,
-  Image,
-  List,
-  Icon,
-  Input,
-  Button,
-  Transition,
-} from "semantic-ui-react";
+import { Card, Image, List, Icon, Input, Transition } from "semantic-ui-react";
 import imgPerson from "../images/avatar/small/person.png";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const PersonList = () => {
   const style_card = {
