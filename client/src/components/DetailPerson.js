@@ -2,13 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { getDetailPerson } from "../actions";
-import {
-  Card,
-  List,
-  Icon,
-  Image,
-  Divider,
-} from "semantic-ui-react";
+import { Card, List, Icon, Image, Divider, Embed } from "semantic-ui-react";
 import imgPerson from "../images/avatar/small/person.png";
 import { useEffect } from "react";
 
@@ -57,7 +51,6 @@ const DetailPerson = () => {
                 Edit
               </span>
             </Link>
-
             <List style={{ margin: "50px 0 0 0" }}>
               <Image
                 avatar
@@ -67,15 +60,41 @@ const DetailPerson = () => {
               <p style={{ "margin-top": "15px" }}>{personDetail.name}</p>
             </List>
             <Divider hidden />
-            <List divided floated="left" selection>
-              <p>mobile phone</p>
-              <p>{personDetail.mobile_phone}</p>
-            </List> <br/>
-            <Divider hidden />
-            <Divider hidden />
-            <List divided floated="left" selection>
-              <p>home phone</p>
-              <p>{personDetail.phone}</p>
+            <List divided selection>
+              <List.Item floated="left">
+                <List.Content>
+                  <List.Description as="a">mobile phone</List.Description>
+                  <List.Header as="a">{personDetail.mobile_phone}</List.Header>
+                </List.Content>
+              </List.Item>
+              <List.Item>
+                <List.Content>
+                  <List.Description as="a">home phone</List.Description>
+                  <List.Header as="a">{personDetail.phone}</List.Header>
+                </List.Content>
+              </List.Item>
+              <List.Item>
+                <List.Content>
+                  <List.Description as="a">email</List.Description>
+                  <List.Header as="a">{personDetail.e_mail}</List.Header>
+                </List.Content>
+              </List.Item>
+              <List.Item>
+                <List.Content>
+                  <List.Description as="a">address</List.Description>
+                  <List.Header as="a">{personDetail.address}</List.Header>
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d195884.96090188943!2d32.62268098021729!3d39.903292277871216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d347d520732db1%3A0xbdc57b0c0842b8d!2sAnkara%2C%20Turkey!5e0!3m2!1sen!2sid!4v1650589991850!5m2!1sen!2sid"
+                    width="240"
+                    height="100"
+                    frameBorder="0"
+                    style={{ border: 0, "margin-top":"20px" }}
+                    allowFullScreen=""
+                    aria-hidden="false"
+                    tabIndex="0"
+                  />
+                </List.Content>
+              </List.Item>
             </List>
           </Card.Content>
         </Card>

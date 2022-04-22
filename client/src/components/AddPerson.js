@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Card, Label, List, Icon, Input, Button } from "semantic-ui-react";
+import { Card, List, Icon, Input } from "semantic-ui-react";
 const AddPerson = () => {
   const style_card = {
     width: "355px",
@@ -137,12 +137,8 @@ const AddPerson = () => {
             />
           </List>
 
-          <List divided selection >
-            <Input
-              size="large"
-              transparent
-              style={style_input}
-            >
+          <List divided selection>
+            <Input size="large" transparent style={style_input}>
               <p>
                 Ringtone <a>Default</a>
                 <Icon name="angle right" />

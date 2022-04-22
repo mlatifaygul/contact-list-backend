@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 import { Link, useParams } from "react-router-dom";
 import { Card, List, Icon, Input } from "semantic-ui-react";
 const UpdatePerson = () => {
@@ -15,7 +15,7 @@ const UpdatePerson = () => {
     <div className="personList">
       <Card style={style_card}>
         <Card.Content>
-          <Link to={`/detail_person/:${id}`}>
+          <Link to={`/persons/${id}`}>
             <span
               style={{
                 float: "left",
